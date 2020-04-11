@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 4cd9960d4fd95baff34107fb22e69e568b494294a58b708cd15965eade639719
+-- hash: 466ddf6ac50ea912bcf0652ce0cd362ac830574b4facf92f7c4d45ba09d0c787
 
 name:           haskell-cis194-course
 version:        0.1.0.0
@@ -33,6 +33,7 @@ library
       Paths_haskell_cis194_course
   hs-source-dirs:
       src
+  ghc-options: -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
   default-language: Haskell2010
@@ -43,7 +44,7 @@ executable haskell-cis194-course-exe
       Paths_haskell_cis194_course
   hs-source-dirs:
       app
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
     , haskell-cis194-course
@@ -56,7 +57,7 @@ test-suite haskell-cis194-course-test
       Paths_haskell_cis194_course
   hs-source-dirs:
       test
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
     , haskell-cis194-course

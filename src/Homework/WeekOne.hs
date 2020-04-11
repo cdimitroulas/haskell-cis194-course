@@ -74,8 +74,3 @@ specialHanoi n source dest storage1 storage2
     specialHanoi (n - getKValue n) source storage1 dest storage2 <>
     hanoi (getKValue n) source dest storage2 <>
     specialHanoi (n - getKValue n) storage1 dest source storage2
-
-main :: IO ()
-main = do
-  print (validate 4012888888881881)
-  print (validate 4012888888881882)

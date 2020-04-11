@@ -1,5 +1,5 @@
 -- CIS 194 Homework 2
-module Homework.WeekTwo.Log where
+module WeekTwo.Log where
 
 import Control.Applicative ()
 

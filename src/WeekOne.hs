@@ -1,4 +1,4 @@
-module Homework.WeekOne where
+module WeekOne where
 
 -- Exercise 1
 --

@@ -1,6 +1,6 @@
-module Homework.WeekTwo.LogAnalysis where
+module WeekTwo.LogAnalysis where
 
-import Homework.WeekTwo.Log
+import WeekTwo.Log
 
 parseMessage :: String -> LogMessage
 parseMessage x =
@@ -39,6 +39,7 @@ isSevereError _ = False
 
 getLogMessage :: LogMessage -> String
 getLogMessage (LogMessage _ _ msg) = msg
+getLogMessage _ = ""
 
 -- takes an unsorted list of LogMessages, and returns a list of the
 -- messages corresponding to any errors with a severity of 50 or greater,

@@ -1,7 +1,6 @@
 module Main where
 
-import Homework.WeekOne ()
-import Lib
+import Homework.WeekTwo.LogAnalysis
 
 main :: IO ()
-main = someFunc
+main = print (parseMessage "I 29 la la la")

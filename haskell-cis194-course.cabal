@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: ad9defbf987122da73a801262c4d587c300d448faf7b4b22de6408a0dbe2a602
+-- hash: 7702a84e92b8e2d7be923ab6eb175a59f8ce9e067d479fe32e1519c12609b095
 
 name:           haskell-cis194-course
 version:        0.1.0.0
@@ -28,6 +28,7 @@ source-repository head
 library
   exposed-modules:
       WeekOne
+      WeekThree.Golf
       WeekTwo.Log
       WeekTwo.LogAnalysis
   other-modules:

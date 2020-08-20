@@ -53,3 +53,22 @@ foldTree xs = Node height (foldTree half1) (head half2) (foldTree (tail half2))
     listLen = length xs
     (half1, half2) = splitAt (listLen `div` 2) xs
     height = balancedTreeHeight listLen
+
+-- Exercise 3: More Folds!
+-- xor should return True if and only if there are an odd number of True
+-- values contained in the input list.
+xor :: [Bool] -> Bool
+xor = foldr (\x y -> if x == True then (not y) else y) False
+
+-- Implement map as a fold.
+map' :: (a -> b) -> [a] -> [b]
+map' f = foldr (\x y -> (f x):y) [] 
+
+-- Exercise 4: Finding Primes
+-- Read about the Sieve of Sundaram. Implement the algorithm using
+-- function composition. Given an integer n, your function should
+-- generate all the odd prime numbers up to 2n + 2.
+cartProd :: [a] -> [b] -> [(a, b)]
+cartProd xs ys = [(x,y) | x <- xs, y <- ys]
+
+sieveSundaram :: Integer -> [Integer]

@@ -21,9 +21,38 @@ fibs1 = map fib [0..]
 -- evaluated if we try to access it from fibs2 by writing something like `fibs2 !! 20` (to 
 -- get the 20th fibonacci number)
 createFibonacciSeq :: Integer -> Integer -> [Integer]
-createFibonacciSeq x y = x : fib' y (x + y)
+createFibonacciSeq x y = x : createFibonacciSeq y (x + y)
 
 fibs2 :: [Integer]
 fibs2 = createFibonacciSeq 0 1
 
 -- Exercise 3
+data Stream a = StreamCons a [a]
+
+streamToList :: Stream a -> [a]
+streamToList (StreamCons x xs) = x:xs
+
+-- Custom instance of Show required to be able to print the Stream which is an infinite list.
+-- In this case I've decided to implement it by showing the first 10 elements.
+instance Show a => Show (Stream a) where
+  show x = show $ take 10 $ streamToList x
+
+-- Exercise 4
+streamRepeat :: a -> Stream a
+streamRepeat x = StreamCons x $ repeat x
+
+streamMap :: (a -> b) -> Stream a -> Stream b
+streamMap f (StreamCons x xs) = StreamCons (f x) (map f xs)
+
+streamFromSeed :: (a -> a) -> a -> Stream a
+streamFromSeed f seed = StreamCons seed infiniteList
+  where infiniteList = streamToList $ streamFromSeed f (f seed)
+
+-- Exercise 5
+nats :: Stream Integer
+nats = streamFromSeed (+1) 0
+
+-- TODO
+interleaveStreams :: Stream a -> Stream a -> Stream a
+
+ruler :: Stream Integer
